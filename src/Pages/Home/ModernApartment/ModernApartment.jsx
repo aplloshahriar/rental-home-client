@@ -1,0 +1,34 @@
+import React from 'react';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import img1 from "../../../assets/pic/home1.jpg";
+import img2 from "../../../assets/pic/wallpaperflare.com_wallpaper.jpg";
+
+const ModernApartment = () => {
+    const overlayStyle = {
+        // top: '50%',
+        // left: '50%',
+        // transform: ' translate(0% -100%)', 
+        marginTop:'-750px',
+        marginBottom:"550px",
+        marginLeft:'150px'
+        // -mt-96
+    }
+    return (
+        <div>
+            <img className='h-auto' src={img2} alt="" />
+            <div>
+                <div style={overlayStyle}  >
+                    <div  className='p-24  bg-white opacity-80 w-3/5 '>
+                        <p className='text-4xl font-semibold'>Modern Apartment</p>
+                        <p className='text-2xl'>$1700</p>
+                        <p>I am text block. Click edit button to change this text. Lorem ipsum <br />dolor sit amet, consectetur adipiscing elite.</p>
+                        <button className='btn btn-error text-white'>Book Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    );
+};
+
+export default ModernApartment;

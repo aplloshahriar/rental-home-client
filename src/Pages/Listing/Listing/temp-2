@@ -1,0 +1,111 @@
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import Header from '../../Shared/Header/Header';
+import AutoComplete from "./CustomAutocomplete";
+import CustomAutocomplete from './CustomAutocomplete';
+import Picker from './Picker';
+import { Avatar, TextField } from '@mui/material';
+import { Link } from 'react-router-dom';
+import img from "../../../assets/pic/home1.jpg";
+import BedroomParentOutlinedIcon from '@mui/icons-material/BedroomParentOutlined';
+import BathroomOutlinedIcon from '@mui/icons-material/BathroomOutlined';
+import WcOutlinedIcon from '@mui/icons-material/WcOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+// import { TextField } from '@mui/material';
+
+// import Picker from '../../Home/Banner/Picker';
+
+const Listing = () => {
+
+    return (
+        <div className=''>
+            <Helmet>
+                <title>Listing</title>
+            </Helmet>
+
+            <Header></Header>
+            {/* to avoid overlap nav */}
+            <h2 className='bg-white p-8 '></h2>
+
+
+            <div className=' md:grid grid-cols-3 ms-4   m-4 -mb-2 sm:mr-8 '>
+                <CustomAutocomplete ></CustomAutocomplete>
+                <Picker></Picker>
+                {/* todo square button */}
+                <div>
+                    <div className='grid grid-cols-3 mt-4 lg:mr-2'>
+
+
+                        <TextField id="outlined-search" label="Todo" type="search" />
+                        <button
+                            style={{ width: '50%', height: '55px', fontSize: '1rem' }}
+                            className='ms-12 btn btn-error text-white font-bold'>
+                            Sort</button>
+                        <button
+                            style={{ width: '70%', height: '55px', fontSize: '1rem' }}
+                            className="ms-0 btn btn-error text-white font-bold">
+                            Search</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+            {/* ....................Grid here....................... */}
+
+            <section className='bg-slate-50'>
+                <div className='sm: md:ms-24 md:mr-24 mt-2 '>
+                    {/* breadcrumb from daisy ui */}
+                    <div className="text-sm breadcrumbs  ms-2">
+                        <ul>
+                            <li><Link to="/">Home</Link></li>
+                            <li>Listing</li>
+                        </ul>
+                    </div>
+
+
+                    <h2 className='font-semibold text-4xl ms-2 mb-8'>Listing---Homes</h2>
+                    {/* grid here between horizontal line and newsletter*/}
+                    <div className='grid sm:grid-cols-1 md:grid-cols-3  '>
+                        <div className='col-span-2 ms-4 mr-4'>
+                            <hr className='col-span-2  ' />
+                            <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-4 mt-4 '>
+
+                                {/* homes photo grid in 2 col starts here */}
+                                <div className=' bg-white rounded-lg'>
+                                    <img className=" rounded-t-lg " src={img} alt="" />
+
+                                    {/* pricing an avatar Todo */}
+                                  
+
+                                    {/* others info */}
+                                    <div className='mt-8 ms-2'>
+                                        <h2 className='text-lg font-semibold'> Beautiful Cove</h2>
+                                        <h2 className='font-thin'> 56 Forest View Dr, San Francisco, CA 94132</h2>
+                                        <h2>
+                                            <BedroomParentOutlinedIcon />2 Bedrooms  < BathroomOutlinedIcon />1 Baths
+                                            <WcOutlinedIcon /> 2 Guests <br /> Bed & Breakfast</h2>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div><h2 className='m-4 p-8 mt-0 bg-white text-center text-2xl font-semibold'>Newsletter Sign Up!</h2></div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    );
+};
+
+export default Listing;
