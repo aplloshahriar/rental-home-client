@@ -6,9 +6,14 @@
         "city": "Miami",
         "price": "12.5/night",
         "address": "123 Ocean Blvd, Miami, FL 33101",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "2 Bedrooms 1 Bathroom 2 Guests Parking",
-        "other": "Oceanfront"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "Yes",
+        "comfort": "Yes",
+        "featured": "Featured"
     },
     {
         "_id": "003",
@@ -17,9 +22,14 @@
         "city": "New York",
         "price": "18.9/night",
         "address": "789 Broadway, New York, NY 10001",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "1 Bedroom 1 Bathroom 3 Guests Gym",
-        "other": "Downtown"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "Yes",
+        "comfort": "Yes",
+        "featured": "Featured"
     },
     {
         "_id": "004",
@@ -28,9 +38,14 @@
         "city": "Denver",
         "price": "20.2/night",
         "address": "456 Mountain Way, Denver, CO 80202",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "2 Bedrooms 2 Bathrooms 4 Guests Fireplace",
-        "other": "Secluded"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "Yes",
+        "comfort": "Yes",
+        "featured": "Featured"
     },
     {
         "_id": "005",
@@ -39,9 +54,14 @@
         "city": "Seattle",
         "price": "15.3/night",
         "address": "987 Lakeview Dr, Seattle, WA 98101",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "1 Bedroom 1 Bathroom 2 Guests Dock",
-        "other": "Lakefront"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "Yes",
+        "comfort": "Yes",
+        "featured": "Featured"
     },
     {
         "_id": "006",
@@ -50,9 +70,13 @@
         "city": "Austin",
         "price": "22.8/night",
         "address": "321 Country Lane, Austin, TX 78701",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "3 Bedrooms 2 Bathrooms 6 Guests Pool",
-        "other": "Rural"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "No",
+        "featured": "Rural"
     },
     {
         "_id": "007",
@@ -61,9 +85,13 @@
         "city": "San Diego",
         "price": "17.5/night",
         "address": "543 Shoreline Ave, San Diego, CA 92101",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "2 Bedrooms 1 Bathroom 4 Guests Ocean View",
-        "other": "Beachfront"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "No",
+        "featured": "Beachfront"
     },
     {
         "_id": "008",
@@ -72,9 +100,13 @@
         "city": "Chicago",
         "price": "28.6/night",
         "address": "654 Magnificent Mile, Chicago, IL 60601",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "4 Bedrooms 3 Bathrooms 8 Guests Rooftop Deck",
-        "other": "Downtown"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "No",
+        "featured": "Downtown"
     },
     {
         "_id": "009",
@@ -83,8 +115,12 @@
         "city": "Aspen",
         "price": "35.9/night",
         "address": "789 Mountain Road, Aspen, CO 81611",
-        "image": "https://ibb.co/bW6TQpd",
-        "description": "5 Bedrooms 4 Bathrooms 10 Guests Hot Tub",
-        "other": "Ski-in/Ski-out"
+        "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+        "bedrooms": "5 Bedrooms",
+        "bathrooms": "4 Bathrooms ",
+        "guests": "10 Guests ",
+        "other": "Hot Tub",
+        "trending": "No",
+        "featured":""
     }
 ]

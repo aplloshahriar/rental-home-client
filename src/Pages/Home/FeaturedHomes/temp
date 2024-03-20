@@ -1,0 +1,89 @@
+import React, { useEffect, useState } from 'react';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import required modules
+import { Pagination } from 'swiper/modules';
+import BedroomParentOutlinedIcon from '@mui/icons-material/BedroomParentOutlined';
+import BathroomOutlinedIcon from '@mui/icons-material/BathroomOutlined';
+import WcOutlinedIcon from '@mui/icons-material/WcOutlined';
+import { Avatar } from '@mui/material';
+
+
+const FeaturedHomes = () => {
+    // Set data in state
+    const [homes, setHomes] = useState([]);
+
+    // Data load
+    useEffect(() => {
+        fetch('homeList.json')
+            .then(res => res.json())
+            .then(data => {
+                const featureHomes = data.filter(home => home.featured === "Featured");
+                setHomes(featureHomes);
+            });
+    }, []);
+
+    return (
+        <div className=''>
+            <div className=' md:ms-36 md:mr-36 sm:mt-96 md:mt-48 lg:mt-24'>
+                <SectionTitle
+                    heading={"Our Featured Homes"}
+                    subHeading={"Hand-picked selection of quality places"}
+                ></SectionTitle>
+
+                {/* Swiper "slides per view" from awesome react components */}
+                <Swiper
+                    slidesPerView={3}
+                    spaceBetween={30}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination]}
+                    className="mySwiper mb-24 "
+                >
+                    {/* Map through homes and render SwiperSlide for each home */}
+                    {homes.map(home => (
+                        <SwiperSlide key={home._id}>
+                            <img
+                                src={home.image} // Use the image URL from the home data
+                                alt={home.name} // Use alt text from the home data
+                            // Apply any image styles if necessary
+                            />
+                            <div className='  rounded-lg sm:m-2'>
+                            
+
+                                {/* pricing and avatar */}
+                                <div className='flex -mt-10  md:ms-2 md:mr-2 text-white justify-between md:justify-between  '>
+                                    <div className=''>
+                                        <h1 className='text-3xl -mt-4  font-semibold w-full'>$600/night</h1>
+                                    </div>
+
+                                    {/* avatar here */}
+                                    <div className='-mt-4 mr-4'>
+                                        <Avatar src="/broken-image.jpg" />
+                                    </div>
+
+                                </div>
+
+                                {/* other info like bed, bath, name,description */}
+                                <div className='mt-8 ms-2'>
+                                    <h2 className='text-lg font-semibold'> Beautiful Cove</h2>
+                                    <h2 className='font-thin'> 56 Forest View Dr, San Francisco, CA 94132</h2>
+                                    <h2>
+                                        <BedroomParentOutlinedIcon />2 Bedrooms  < BathroomOutlinedIcon />1 Baths
+                                        <WcOutlinedIcon /> 2 Guests <br /> Bed & Breakfast</h2>
+
+                                </div>
+
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        </div>
+    );
+};
+export default FeaturedHomes;

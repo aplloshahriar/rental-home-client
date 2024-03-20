@@ -1,8 +1,11 @@
 import React from 'react';
 import img from '../../../assets/pic/home1.jpg';
 import "./Comfort.css";
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+
+import useHomes from '../../../assets/hooks/useHome';
 const Comfort = () => {
+    const [homes] = useHomes();
+    const comfortHomes = homes.filter(home => home.featured === "Featured");
     return (
 
         <div className='lg:m-72  md:m-36 '>

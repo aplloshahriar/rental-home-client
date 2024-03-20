@@ -1,22 +1,28 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import img from "../../../assets/pic/home1.jpg"
 import { Link } from "react-router-dom";
+import useHomes from "../../../assets/hooks/useHome";
 
 const TrendingDestinations = () => {
-   
+    const [homes] = useHomes();
+    const trendingHomes = homes.filter(home => home.trending === "Yes");
+
     return (
-        <div className='mt-24 ms-36 mr-36 mb-36'>
-            <SectionTitle
-                heading={"Trending Destinations"}
-                subHeading={"Explore our selection of the best places around the world"}
-            ></SectionTitle>
-            <div className=" grid lg:grid-cols-2 gap-8 ">
+        <div className='mt-24  md:ms-10 sm:mr-2 lg:ms-64 lg:mr-64 mb-36'>
 
-                <img src={img}className="rounded-lg   "  alt="" />
-                <img src={img} className="rounded-lg " alt="" />
-                <img src={img} className="rounded-lg " alt="" />
-                <img src={img} className="rounded-lg " alt="" />
+            <h2 className="font-semibold mt-8 text-4xl lg:ms-2 ">Trending Destinations</h2>
+            <h2 className="ms-2 text-lg mt-4 mb-4">Explore our selection of the best places</h2>
 
+            <div className="ms-2 grid lg:grid-cols-2 gap-x-0 gap-y-8 md:m-0    ">
+
+                {
+                    trendingHomes.map(home => (
+                        <div className=" mb-8"
+                            key={home._id}>
+                            <img src={home.image} className="rounded-lg w-11/12 ms-0 mr-0 mb-0  " alt="" />
+                            <h2 className="text-2xl font-semibold text-center -ms-8 -mt-16">	{home.city}</h2>
+                        </div>
+                    ))}
             </div>
 
         </div>
