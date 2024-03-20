@@ -12,14 +12,16 @@ import BathroomOutlinedIcon from '@mui/icons-material/BathroomOutlined';
 import WcOutlinedIcon from '@mui/icons-material/WcOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import TrendingDestinations from "../../Home/TrendingDestinations/TrendingDestinations";
+import useHomes from '../../../assets/hooks/useHome';
 
 
 const Listing = () => {
-
+    const [homes] = useHomes();
 
     // rating from mui
     const [value, setValue] = React.useState(0);
-
+    const featureHomes = homes.filter(home => home.featured === "Featured");
+    const trendingHomes = homes.filter(home => home.trending === "Yes");
 
     return (
         <div className=''>
@@ -27,7 +29,7 @@ const Listing = () => {
                 <title>Listing</title>
             </Helmet>
 
-            <Header></Header>
+
             {/* to avoid overlap nav */}
             <h2 className='bg-white p-8 '></h2>
 
@@ -75,114 +77,38 @@ const Listing = () => {
                             <hr className='  ' />
                             <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-2 mt-4 '>
                                 {/* homes photo grid in 2 col starts here */}
-                                <div className=' bg-white rounded-lg sm:m-2'>
-                                    <img className=" rounded-t-lg w-full" src={img} alt="" />
+                                {
+                                    homes.map(home => (
+                                        <div
+                                            className=' bg-white rounded-lg sm:m-2'
+                                            key={home._id}>
+                                            <img className=" rounded-t-lg w-full" src={img} alt="" />
 
-                                    {/* pricing and avatar */}
-                                    <div className='flex -mt-10  md:ms-2 md:mr-2 text-white justify-between md:justify-between  '>
-                                        <div className=''>
-                                            <h1 className='text-3xl -mt-4  font-semibold w-full'>$600/night</h1>
-                                        </div>
+                                            {/* pricing and avatar */}
+                                            <div className='flex -mt-10  md:ms-2 md:mr-2 text-white justify-between md:justify-between  '>
+                                                <div className=''>
+                                                    <h1 className='text-3xl -mt-4  font-semibold w-full'>{home.price}</h1>
+                                                </div>
 
-                                        {/* avatar here */}
-                                        <div className='-mt-4 mr-4'>
-                                            <Avatar src="/broken-image.jpg" />
-                                        </div>
+                                                {/* avatar here */}
+                                                <div className='-mt-4 mr-4'>
+                                                    <Avatar src="/broken-image.jpg" />
+                                                </div>
 
-                                    </div>
+                                            </div>
 
-                                    {/* other info like bed, bath, name,description */}
-                                    <div className='mt-8 ms-2'>
-                                        <h2 className='text-lg font-semibold'> Beautiful Cove</h2>
-                                        <h2 className='font-thin'> 56 Forest View Dr, San Francisco, CA 94132</h2>
-                                        <h2>
-                                            <BedroomParentOutlinedIcon />2 Bedrooms  < BathroomOutlinedIcon />1 Baths
-                                            <WcOutlinedIcon /> 2 Guests <br /> Bed & Breakfast</h2>
+                                            {/* other info like bed, bath, name,description */}
+                                            <div className='mt-8 ms-2'>
+                                                <h2 className='text-lg font-semibold'> {home.name}</h2>
+                                                <h2 className='font-thin'> {home.address}</h2>
+                                                <h2>
+                                                    <BedroomParentOutlinedIcon />{home.bedrooms}< BathroomOutlinedIcon />{home.bathrooms}
+                                                    <WcOutlinedIcon /> {home.guests} <br /> {home.other}</h2>
 
-                                    </div>
+                                            </div>
 
-                                </div>
-                                <div className=' bg-white rounded-lg sm:m-2'>
-                                    <img className=" rounded-t-lg w-full" src={img} alt="" />
-
-                                    {/* pricing and avatar */}
-                                    <div className='flex -mt-10  md:ms-2 md:mr-2 text-white justify-between md:justify-between  '>
-                                        <div className=''>
-                                            <h1 className='text-3xl -mt-4  font-semibold w-full'>$600/night</h1>
-                                        </div>
-
-                                        {/* avatar here */}
-                                        <div className='-mt-4 mr-4'>
-                                            <Avatar src="/broken-image.jpg" />
-                                        </div>
-
-                                    </div>
-
-                                    {/* other info like bed, bath, name,description */}
-                                    <div className='mt-8 ms-2'>
-                                        <h2 className='text-lg font-semibold'> Beautiful Cove</h2>
-                                        <h2 className='font-thin'> 56 Forest View Dr, San Francisco, CA 94132</h2>
-                                        <h2>
-                                            <BedroomParentOutlinedIcon />2 Bedrooms  < BathroomOutlinedIcon />1 Baths
-                                            <WcOutlinedIcon /> 2 Guests <br /> Bed & Breakfast</h2>
-
-                                    </div>
-
-                                </div>
-                                <div className=' bg-white rounded-lg sm:m-2'>
-                                    <img className=" rounded-t-lg w-full" src={img} alt="" />
-
-                                    {/* pricing and avatar */}
-                                    <div className='flex -mt-10  md:ms-2 md:mr-2 text-white justify-between md:justify-between  '>
-                                        <div className=''>
-                                            <h1 className='text-3xl -mt-4  font-semibold w-full'>$600/night</h1>
-                                        </div>
-
-                                        {/* avatar here */}
-                                        <div className='-mt-4 mr-4'>
-                                            <Avatar src="/broken-image.jpg" />
-                                        </div>
-
-                                    </div>
-
-                                    {/* other info like bed, bath, name,description */}
-                                    <div className='mt-8 ms-2'>
-                                        <h2 className='text-lg font-semibold'> Beautiful Cove</h2>
-                                        <h2 className='font-thin'> 56 Forest View Dr, San Francisco, CA 94132</h2>
-                                        <h2>
-                                            <BedroomParentOutlinedIcon />2 Bedrooms  < BathroomOutlinedIcon />1 Baths
-                                            <WcOutlinedIcon /> 2 Guests <br /> Bed & Breakfast</h2>
-
-                                    </div>
-
-                                </div>
-                                <div className=' bg-white rounded-lg sm:m-2'>
-                                    <img className=" rounded-t-lg w-full" src={img} alt="" />
-
-                                    {/* pricing and avatar */}
-                                    <div className='flex -mt-10  md:ms-2 md:mr-2 text-white justify-between md:justify-between  '>
-                                        <div className=''>
-                                            <h1 className='text-3xl -mt-4  font-semibold w-full'>$600/night</h1>
-                                        </div>
-
-                                        {/* avatar here */}
-                                        <div className='-mt-4 mr-4'>
-                                            <Avatar src="/broken-image.jpg" />
-                                        </div>
-
-                                    </div>
-
-                                    {/* other info like bed, bath, name,description */}
-                                    <div className='mt-8 ms-2'>
-                                        <h2 className='text-lg font-semibold'> Beautiful Cove</h2>
-                                        <h2 className='font-thin'> 56 Forest View Dr, San Francisco, CA 94132</h2>
-                                        <h2>
-                                            <BedroomParentOutlinedIcon />2 Bedrooms  < BathroomOutlinedIcon />1 Baths
-                                            <WcOutlinedIcon /> 2 Guests <br /> Bed & Breakfast</h2>
-
-                                    </div>
-
-                                </div>
+                                        </div>))
+                                }
 
                             </div>
                         </div>
@@ -192,132 +118,55 @@ const Listing = () => {
                             <h2 className=' m-4 p-8 mt-0 bg-white text-center text-2xl font-semibold'>Newsletter Sign Up!</h2>
 
                             {/* right side image and info starts here */}
-                            <div>
-                                <div className='ms-4 mr-4 p-4  bg-white'>
-                                    <h2 className='text-xl font-semibold mb-4'>Featured Items</h2>
-                                    <div className='flex'>
-                                        <img className='w-1/2 rounded-lg' src={img} alt="" />
-                                        <div className='ms-2'>
-                                            <h2 className='font-semibold'>Beautiful Cove
-                                            </h2>
+                            <div className='ms-4 mr-4 p-4  bg-white'>
+                                <h2 className=' text-xl font-semibold mb-4'>Featured Items</h2>
+                                {
+                                    featureHomes.map(home => (
+                                        <div className='mb-4'>
+                                            <div className='flex'>
+                                                <img className='w-1/2 rounded-lg' src={home.image} alt="" />
+                                                <div className='ms-2 '>
+                                                    <h2 className='font-semibold'>{home.name}
+                                                    </h2>
 
-                                            {/* price and rating */}
-                                            <h2>$175/night  </h2>
-                                            {/* rating from mui */}
-                                            <Rating className=''
-                                                name="simple-controlled"
-                                                value={value}
-                                                onChange={(event, newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                            />
+                                                    {/* price and rating */}
+                                                    <h2>{home.price}  </h2>
+                                                    {/* rating from mui */}
+                                                    <Rating className=''
+                                                        name="simple-controlled"
+                                                        value={value}
+                                                        onChange={(event, newValue) => {
+                                                            setValue(newValue);
+                                                        }}
+                                                    />
 
 
-                                            <h2> 2<BedroomParentOutlinedIcon />  2< BathroomOutlinedIcon />  2<WcOutlinedIcon /></h2>
+                                                    <h2> 2<BedroomParentOutlinedIcon />  2< BathroomOutlinedIcon />  2<WcOutlinedIcon /></h2>
+                                                </div>
+
+
+                                            </div>
+
                                         </div>
+                                    ))
+                                }
 
-
-                                    </div>
-
-                                </div>
-                                <div className='ms-4 mr-4 p-4  bg-white'>
-                                    <div className='flex'>
-                                        <img className='w-1/2 rounded-lg' src={img} alt="" />
-                                        <div className='ms-2'>
-                                            <h2 className='font-semibold'>Beautiful Cove
-                                            </h2>
-
-                                            {/* price and rating */}
-                                            <h2>$175/night  </h2>
-                                            {/* rating from mui */}
-                                            <Rating className=''
-                                                name="simple-controlled"
-                                                value={value}
-                                                onChange={(event, newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                            />
-
-
-                                            <h2> 2<BedroomParentOutlinedIcon />  2< BathroomOutlinedIcon />  2<WcOutlinedIcon /></h2>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <div className='ms-4 mr-4 p-4  bg-white'>
-
-                                    <div className='flex'>
-                                        <img className='w-1/2 rounded-lg' src={img} alt="" />
-                                        <div className='ms-2'>
-                                            <h2 className='font-semibold'>Beautiful Cove
-                                            </h2>
-
-                                            {/* price and rating */}
-                                            <h2>$175/night  </h2>
-                                            {/* rating from mui */}
-                                            <Rating className=''
-                                                name="simple-controlled"
-                                                value={value}
-                                                onChange={(event, newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                            />
-
-
-                                            <h2> 2<BedroomParentOutlinedIcon />  2< BathroomOutlinedIcon />  2<WcOutlinedIcon /></h2>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <div className='ms-4 mr-4 p-4  bg-white'>
-
-                                    <div className='flex'>
-                                        <img className='w-1/2 rounded-lg' src={img} alt="" />
-                                        <div className='ms-2'>
-                                            <h2 className='font-semibold'>Beautiful Cove
-                                            </h2>
-
-                                            {/* price and rating */}
-                                            <h2>$175/night  </h2>
-                                            {/* rating from mui */}
-                                            <Rating className=''
-                                                name="simple-controlled"
-                                                value={value}
-                                                onChange={(event, newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                            />
-
-
-                                            <h2> 2<BedroomParentOutlinedIcon />  2< BathroomOutlinedIcon />  2<WcOutlinedIcon /></h2>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
                             </div>
 
                             {/* explore part */}
                             <div className='ms-4 mr-4 p-4 bg-white mt-8'>
                                 <h2 className='font-semibold text-xl mt-4'>Explore</h2>
                                 {/* image and text  */}
-                                <div className='mt-4'>
-                                    <img src={img} className='rounded-md h-36 w-full' alt="" />
-                                    <h2 className='-mt-8 text-center text-xl font-semibold'>Miami</h2>
-                                </div>
-                                <div className='mt-4'>
-                                    <img src={img} className='rounded-md h-36 w-full' alt="" />
-                                    <h2 className='-mt-8 text-center text-xl font-semibold'>Miami</h2>
-                                </div>
-                                <div className='mt-4'>
-                                    <img src={img} className='rounded-md h-36 w-full' alt="" />
-                                    <h2 className='-mt-8 text-center text-xl font-semibold'>Miami</h2>
-                                </div>
+                                {
+                                    trendingHomes.map(home => (
+                                        <div 
+                                        className='mt-4'
+                                        key={home._id}>
+                                            <img src={home.image} className='rounded-md h-36 w-full' alt="" />
+                                            <h2 className='-mt-8 text-center text-xl font-semibold'>{home.city}</h2>
+                                        </div>))
+                                }
+
 
                             </div>
 
