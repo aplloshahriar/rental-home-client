@@ -13,6 +13,7 @@
         "other": "Hot Tub",
         "trending": "Yes",
         "comfort": "Yes",
+        "review": "643010e0f5a7e52ce1e8fa65",
         "featured": "Featured"
     },
     {
@@ -29,6 +30,7 @@
         "other": "Hot Tub",
         "trending": "Yes",
         "comfort": "Yes",
+        "review": "643010e0f5a7e52ce1e8fa65",
         "featured": "Featured"
     },
     {
@@ -45,6 +47,7 @@
         "other": "Hot Tub",
         "trending": "Yes",
         "comfort": "Yes",
+        "review": "643010e0f5a7e52ce1e8fa65",
         "featured": "Featured"
     },
     {
@@ -61,6 +64,7 @@
         "other": "Hot Tub",
         "trending": "Yes",
         "comfort": "Yes",
+        "review": "643010e0f5a7e52ce1e8fa65",
         "featured": "Featured"
     },
     {
@@ -121,6 +125,6 @@
         "guests": "10 Guests ",
         "other": "Hot Tub",
         "trending": "No",
-        "featured":""
+        "featured": ""
     }
 ]
