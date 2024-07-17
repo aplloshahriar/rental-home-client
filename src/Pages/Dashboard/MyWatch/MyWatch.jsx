@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import useWatches from "../../../assets/hooks/useWatches";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyWatch = () => {
   const [watches, refetch] = useWatches();
@@ -26,7 +27,7 @@ const MyWatch = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/watch/${item._id}`, {
+        fetch(`https://home-server-theta.vercel.app/watch/${item._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -51,7 +52,9 @@ const MyWatch = () => {
       <div className="uppercase lg:text-3xl font-bold flex justify-evenly items-center mt-8 lg:mt-24  ">
         <h2 className="">Watch List:{watches.length}</h2>
         <h2 className=""> Total Price: ${total}</h2>
-        <button className="btn btn-error  btn-sm">Pay</button>
+        <Link to="/dashboard/payment" className="btn btn-error  btn-sm">
+          Pay
+        </Link>
       </div>
 
       {/* table */}

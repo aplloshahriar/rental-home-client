@@ -6,14 +6,18 @@
     "city": "Miami",
     "price": "12.5/night",
     "address": "123 Ocean Blvd, Miami, FL 33101",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bedrooms": "5 Bedrooms",
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",
     "other": "Hot Tub",
     "trending": "Yes",
     "comfort": "Yes",
-
+    "review": "643010e0f5a7e52ce1e8fa65",
     "featured": "Featured"
   },
   {
@@ -23,14 +27,18 @@
     "city": "New York",
     "price": "18.9/night",
     "address": "789 Broadway, New York, NY 10001",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bedrooms": "5 Bedrooms",
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",
     "other": "Hot Tub",
     "trending": "Yes",
     "comfort": "Yes",
-
+    "review": "643010e0f5a7e52ce1e8fa65",
     "featured": "Featured"
   },
   {
@@ -40,14 +48,18 @@
     "city": "Denver",
     "price": "20.2/night",
     "address": "456 Mountain Way, Denver, CO 80202",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bedrooms": "5 Bedrooms",
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",
     "other": "Hot Tub",
     "trending": "Yes",
     "comfort": "Yes",
-
+    "review": "643010e0f5a7e52ce1e8fa65",
     "featured": "Featured"
   },
   {
@@ -57,14 +69,18 @@
     "city": "Seattle",
     "price": "15.3/night",
     "address": "987 Lakeview Dr, Seattle, WA 98101",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bedrooms": "5 Bedrooms",
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",
     "other": "Hot Tub",
     "trending": "Yes",
     "comfort": "Yes",
-
+    "review": "643010e0f5a7e52ce1e8fa65",
     "featured": "Featured"
   },
   {
@@ -74,7 +90,11 @@
     "city": "Austin",
     "price": "22.8/night",
     "address": "321 Country Lane, Austin, TX 78701",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bedrooms": "5 Bedrooms",
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",
@@ -89,8 +109,11 @@
     "city": "San Diego",
     "price": "17.5/night",
     "address": "543 Shoreline Ave, San Diego, CA 92101",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
-    "bedrooms": "5 Bedrooms",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",
     "other": "Hot Tub",
@@ -104,7 +127,11 @@
     "city": "Chicago",
     "price": "28.6/night",
     "address": "654 Magnificent Mile, Chicago, IL 60601",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bedrooms": "5 Bedrooms",
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",
@@ -119,7 +146,11 @@
     "city": "Aspen",
     "price": "35.9/night",
     "address": "789 Mountain Road, Aspen, CO 81611",
-    "image": "https://i.ibb.co/HYJK3Fd/home1.jpg",
+    "image": [
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg",
+      "https://i.ibb.co/HYJK3Fd/home1.jpg"
+    ],
     "bedrooms": "5 Bedrooms",
     "bathrooms": "4 Bathrooms ",
     "guests": "10 Guests ",

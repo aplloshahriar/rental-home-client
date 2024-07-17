@@ -32,7 +32,7 @@ const Register = () => {
             gender: data.gender,
           };
           console.log("save", saveUser);
-          fetch("http://localhost:5000/users", {
+          fetch("https://home-server-theta.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -66,7 +66,7 @@ const Register = () => {
         <title>Register</title>
       </Helmet>
       {/* to avoid overlap nav */}
-      {/* <h2 className='bg-white p-8 '></h2> */}
+      <h2 className="bg-white p-8 "></h2>
 
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">

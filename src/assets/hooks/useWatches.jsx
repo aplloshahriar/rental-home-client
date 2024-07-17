@@ -1,19 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
-import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProvider";
+import useAxiosSecure from "./useAxiosSecure";
+import useAuth from "./useAuth";
 
 const useWatches = () => {
-  const { user } = useContext(AuthContext);
-  // const token = localStorage.getItem('Access-Token')
+  // const { user } = useContext(AuthContext);
+  const { user, loading } = useAuth();
+  // const token = localStorage.getItem("Access-Token");
+  const [axiosSecure] = useAxiosSecure();
 
   // tanStack/react query applied
   const { refetch, data: watches = [] } = useQuery({
     queryKey: ["watches", user?.email],
+    enabled: !loading,
+
     queryFn: async () => {
-      const response = await fetch(
-        `http://localhost:5000/watch?email=${user?.email}`
-      );
-      return response.json();
+      const res = await axiosSecure(`/watch?email=${user?.email}`);
+      // console.log(response);
+      return res.data;
     },
   });
   return [watches, refetch];

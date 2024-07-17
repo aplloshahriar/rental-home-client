@@ -10,6 +10,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { app } from "../Firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -53,8 +54,22 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+
+      if (currentUser) {
+        axios
+          .post("https://home-server-theta.vercel.app/jwt", {
+            email: currentUser.email,
+          })
+          .then((data) => {
+            // console.log(data.data.token);
+            localStorage.setItem("Access-Token", data.data.token);
+            setLoading(false);
+          });
+      } else {
+        localStorage.removeItem("Access-Token");
+      }
     });
+
     return () => {
       return unsubscribe();
     };

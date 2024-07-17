@@ -18,13 +18,16 @@ const SocialLogin = () => {
         email: loggedUser.email,
         // age: loggedUser.age,
       };
-      fetch(`http://localhost:5000/users`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(saveUser),
-      })
+      fetch(
+        `https://home-server-q5rf479n1-shahriars-projects-839da871.vercel.app/users`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {

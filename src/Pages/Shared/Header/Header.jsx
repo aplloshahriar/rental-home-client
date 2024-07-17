@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { MdOutlineSavedSearch } from "react-icons/md";
 import useWatches from "../../../assets/hooks/useWatches";
+import { FaSwatchbook } from "react-icons/fa";
 
 const Header = () => {
   const { user, LogOut } = useContext(AuthContext);
@@ -120,28 +121,29 @@ const Header = () => {
             <li>
               <Link to="/secret">Secret</Link>
             </li>
-            <li>
-              <Link to="/dashboard/mywatch">
-                <button className="btn">
-                  <MdOutlineSavedSearch />
-                  <div className="badge badge-secondary">{watches?.length}</div>
-                </button>
-              </Link>
-            </li>
+
             {user ? (
               <>
-                <li className="mt-2 mr-2">{user?.displayName}</li>
+                <li className="mt-2 mr-4">{user?.displayName}</li>
                 <button onClick={handleLogOut} className="">
                   Logout
                 </button>
               </>
             ) : (
               <>
-                <li>
+                <li className="ms-4">
                   <Link to="/login">Login</Link>
                 </li>
               </>
             )}
+            <li className="ms-2">
+              <Link to="/dashboard/mywatch">
+                <MdOutlineSavedSearch className="text-xl" />
+                <h2 className="ps-2 pr-2 rounded-xl text-md font-extrabold bg-pink-500 ">
+                  +{watches?.length}
+                </h2>
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">

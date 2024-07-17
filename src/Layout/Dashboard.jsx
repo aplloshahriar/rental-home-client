@@ -7,12 +7,15 @@ import { FaHome } from "react-icons/fa";
 import { FaListAlt } from "react-icons/fa";
 import useWatches from "../assets/hooks/useWatches";
 import { MdAddHome } from "react-icons/md";
+import useAdmin from "../assets/hooks/useAdmin";
 
 const Dashboard = () => {
   const [watches] = useWatches();
+  console.log(watches);
   // todo
-  const isAdmin = true;
+  // const isAdmin = true;
   // const isAdmin = false;
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="drawer">
@@ -67,6 +70,11 @@ const Dashboard = () => {
                   <li>
                     <Link to="/dashboard/allusers">
                       <FaUsers></FaUsers>All Users
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/">
+                      <FaHome></FaHome> Home
                     </Link>
                   </li>
                 </>

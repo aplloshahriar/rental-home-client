@@ -10,6 +10,11 @@ import Dashboard from "../Layout/Dashboard";
 import { MyLocation } from "@mui/icons-material";
 import MyWatch from "../Pages/Dashboard/MyWatch/MyWatch";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import DetailsHomes from "../Pages/DetailsHomes/DetailsHomes";
+import AddHome from "../Pages/Dashboard/AddHome/AddHome";
+import AdminRoutes from "../Routes/AdminRoutes";
+import ManageHome from "../Pages/Dashboard/ManageHome/ManageHome";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +28,13 @@ export const router = createBrowserRouter([
       {
         path: "/listing",
         element: <Listing></Listing>,
+      },
+      {
+        path: "/detailshomes/:id",
+        element: <DetailsHomes></DetailsHomes>,
+        loader: ({ params }) => {
+          return fetch(`https://home-server-theta.vercel.app/home/${params.id}`);
+        },
       },
       {
         path: "/login",
@@ -55,8 +67,34 @@ export const router = createBrowserRouter([
         element: <MyWatch></MyWatch>,
       },
       {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
+
+      // admin routes
+      {
         path: "allusers",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoutes>
+            <AllUsers></AllUsers>,
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "addhome",
+        element: (
+          <AdminRoutes>
+            <AddHome></AddHome>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "managehome",
+        element: (
+          <AdminRoutes>
+            <ManageHome></ManageHome>
+          </AdminRoutes>
+        ),
       },
     ],
   },
